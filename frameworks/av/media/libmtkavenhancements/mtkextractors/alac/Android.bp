@@ -1,0 +1,67 @@
+cc_library_shared {
+
+    include_dirs: [
+        "frameworks/av/media/libstagefright/include",
+        "frameworks/av/media/libmtkavenhancements/stagefright", 
+    ],
+
+    shared_libs: [
+        "libmtkavenhancements",
+        "liblog",
+        "libmediaextractor",
+        "libcutils",
+        "libstagefright_foundation",
+        "libmedia",
+    ],
+
+    static_libs: [
+        "libfifo",
+        "libutils",
+        "libavextensions",
+    ],
+
+    name: "libmtkalacextractor",
+    owner: "mtk",
+    relative_install_path: "extractors",
+
+    compile_multilib: "first",
+
+    cflags: [
+        "-Werror",
+        "-Wall",
+        "-fvisibility=hidden",
+    ],
+    version_script: "exports.lds",
+
+    sanitize: {
+        cfi: true,
+        misc_undefined: [
+            "unsigned-integer-overflow",
+            "signed-integer-overflow",
+        ],
+        diag: {
+            cfi: true,
+        },
+    },
+
+    defaults: [
+        "mtk_alacextractor_defaults",
+    ],
+}
+
+bootstrap_go_package {
+    name:"soong-alac-mediatek",
+    pkgPath:"android/soong/alac/mediatek",
+    deps:[
+        "soong-android",
+        "soong-cc",
+    ],
+    srcs:[
+        "alac.go",
+    ],
+    pluginFor:["soong_build"],
+}
+
+mtk_alacextractor_defaults {
+    name: "mtk_alacextractor_defaults",
+}

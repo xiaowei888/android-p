@@ -1,0 +1,65 @@
+cc_library_shared {
+
+    include_dirs: [
+        "frameworks/av/media/libstagefright/include",
+    ],
+
+    shared_libs: [
+        "libmtkavenhancements",
+        "liblog",
+        "libmediaextractor",
+        "libcutils",
+        "libstagefright_foundation",
+    ],
+
+    static_libs: [
+        "libfifo",
+        "libutils",
+        "libavextensions",
+    ],
+
+    name: "libmtkadpcmextractor",
+    owner: "mtk",
+    relative_install_path: "extractors",
+
+    compile_multilib: "first",
+
+    cflags: [
+        "-Werror",
+        "-Wall",
+        "-fvisibility=hidden",
+    ],
+    version_script: "exports.lds",
+
+    sanitize: {
+        cfi: true,
+        misc_undefined: [
+            "unsigned-integer-overflow",
+            "signed-integer-overflow",
+        ],
+        diag: {
+            cfi: true,
+        },
+    },
+
+    defaults: [
+        "mtk_adpcmextractor_defaults",
+    ],
+}
+
+bootstrap_go_package {
+    name:"soong-adpcm-mediatek",
+    pkgPath:"android/soong/adpcm/mediatek",
+    deps:[
+        "soong-android",
+        "soong-cc",
+    ],
+    srcs:[
+        "adpcm.go",
+    ],
+    pluginFor:["soong_build"],
+}
+
+mtk_adpcmextractor_defaults {
+    name: "mtk_adpcmextractor_defaults",
+}

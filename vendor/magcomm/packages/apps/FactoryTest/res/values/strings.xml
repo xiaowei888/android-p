@@ -1,0 +1,228 @@
+<resources>
+    <string name="app_name">FactoryTest</string>
+    <string name="test_auto">AutoTest</string>
+    <string name="test_manual">ManualTest</string>
+    <string name="test_report">TestReport</string>
+    <string name="machinery_version">Version</string>
+    <string name="factory_reset">Reset</string>
+    <string name="result_success">Success</string>
+    <string name="result_fail">Fail</string>
+
+    <!--Version-->
+    <string name="version_model">Model:</string>
+    <string name="software_version">Software Version:</string>
+    <string name="hardware_version">Hardware Version:</string>
+    <string name="baseband_version">Baseband Version:</string>
+    <string name="sn_version">SN:</string>
+    <string name="sn_error">can not get the serial number</string>
+    <string name="WCDMA_BT">WCDMA_BT:</string>
+    <string name="WCDMA_FT">WCDMA_FT:</string>
+    <string name="GSM_BT">GSM_BT:</string>
+    <string name="GSM_FT">GSM_FT:</string>
+    <string name="sn_notice">The length of sn does not match so that it can not get the status of BT/FT</string>
+    <string name="IMEI">IMEI</string>
+    <string name="MEID">MEID:</string>
+
+    <!--Reset-->
+    <string name="need_reset">Please make sure that you want to reset</string>
+    <string name="reset_cancel">Cancel</string>
+    <string name="reset_ensure">Sure</string>
+
+    <!--TP-->
+    <string name="X">X:</string>
+    <string name="Y">Y:</string>
+    <string name="dx">dx:</string>
+    <string name="dy">dy:</string>
+
+    <!--WLAN-->
+    <string name="wifi_title">Available WiFi networks</string>
+    <string name="wifi_first_five">(The first five)</string>
+    <string name="wifi_signal_intensity">Signal intensity</string>
+    <string name="wifi_is_opening">WiFi is opening up</string>
+    <string name="wifi_is_closed">WiFi can not use</string>
+    <string name="wifi_is_scanning">Scanning Wifi</string>
+
+    <!--GPS-->
+    <string name="gps_data">Data of GPS</string>
+    <string name="gps_snr">SNR:</string>
+    <string name="gps_prn">PRN:</string>
+    <string name="gps_azimuth">Azimuth:</string>
+    <string name="gps_ave_signal_intensity">Ave signal intensity:</string>
+    <string name="locate_fail">Unable to obtain geographic information</string>
+    <string name="gps_longitude">Longitude:</string>
+    <string name="gps_latitude">Latitude:</string>
+    <string name="gps_time">Time of GPS:</string>
+    <string name="being_positioned">Being positioned...</string>
+    <string name="gps_item_id">ID:</string>
+
+    <!--Bluetooth-->
+    <string name="open_bt">Bluetooth is opening up</string>
+    <string name="scan_bt_device">Scanning device...</string>
+    <string name="used_bt_device">Available devices</string>
+    <string name="unknow_device">Unkonw Device</string>
+    <string name="bt_refresh">Refresh</string>
+
+    <!--Brightness-->
+    <string name="current_brightness">Current Brightness:</string>
+
+    <!--Keyboard-->
+    <string name="keyboard_test_title">Press the buttons in the list to test the keys</string>
+
+    <!--Headset-->
+    <string name="headset_is_unavailable">Headset is unavailable</string>
+
+    <!--Charge-->
+    <string name="battery_state">Charging state:</string>
+    <string name="battery_voltage">Battery voltage:</string>
+    <string name="current_temperature">Phone temperature:</string>
+    <string name="charge_current">Charging current:</string>
+    <string name="charge_voltage">Charging voltage:</string>
+    <string name="charge_notice">Please connect the charging line!</string>
+    <string name="battery_charge_state_ac">Charging(AC)</string>
+    <string name="battery_charge_state_usb">Charging(USB)</string>
+    <string name="battery_charge_state_discharging">Disconnect</string>
+    <string name="battery_charge_state_notcharging">No charge</string>
+    <string name="battery_charge_state_full">Be filled</string>
+    <string name="battery_charge_state_unknow">Unknown</string>
+
+    <!--SD-->
+    <string name="no_sd">Please insert memory card</string>
+    <string name="sdcard_test_success">SD card test success</string>
+
+    <!--Radio-->
+    <string name="radio_hint">Please hold on,FM is opening</string>
+    <string name="radio_test_finish">Test finish</string>
+
+    <!--Gyroscope-->
+    <string name="gyroscope_data">Gyroscope Data:</string>
+    <string name="gyroscope_notice">No Gyroscope</string>
+
+    <!--SIM || UIM-->
+    <string name="test_sim_status_0">Status: Unknown</string>
+    <string name="test_sim_status_1">Status: No SIM card</string>
+    <string name="test_sim_status_2">Status: Locked: Requires user input PIN code to unlock</string>
+    <string name="test_sim_status_3">Status: Locked: Requires user input PUN code to unlock</string>
+    <string name="test_sim_status_4">Status: Locked: Requires a network PIN code to unlock</string>
+    <string name="test_sim_status_5">Status: Well tested</string>
+    <string name="test_sim_network">Network:</string>
+
+    <!--FingerPrint-->
+    <string name="fingerprint_hint">Please hold on,FingerPrint is opening</string>
+    <string name="fingerprint_test_finish">Test finish</string>
+
+    <!--Camera-->
+    <string name="take_picture">Take Picture</string>
+
+    <!--LightSensor-->
+    <string name="light_intensity_value">Light intensity value:</string>
+    <string name="light_sensor_notice">No LightSensor</string>
+
+    <!--Proximity-->
+    <string name="proximitysenor_info">Proximity sensor data:</string>
+    <string name="proximity_sensor_notice">No ProximitySensor</string>
+
+    <!--Accelerometer-->
+    <string name="accelerometer_data">Accelerometer Data:</string>
+    <string name="accelerometer_notice">No Sensor</string>
+
+    <!--Magnetic-->
+    <string name="magnetic_data">Magnetic Data:</string>
+    <string name="magnetic_notice">When no magnetic objects near,it is successful if X,Y,Z data is less than 400 and more than -400,otherwise it is failed</string>
+    <string name="magnetic_error">No Sensor</string>
+
+    <!--OTG-->
+    <string name="no_otg">OTG unmounted</string>
+    <string name="vendor_id">Vendor Id:</string>
+    <string name="product_id">Product Id:</string>
+    <string name="manufacturer_name">Manufacturer:</string>
+    <string name="serial_number">Serial Number:</string>
+    <string name="usb_version">USB:</string>
+
+    <!--HDMI-->
+    <string name="no_hdmi">HDMI has not been detected</string>
+    <string name="detect_hdmi">Detection of HDMI</string>
+
+    <!--Pressure-->
+    <string name="no_pressure">Undetected pressure sensor</string>
+
+    <!--ViceCamera-->
+    <string name="vice_camera_notice">Use your hand or other things to cover the vice camera,or put the phone in a place where the light is weak. When the toast \"Vice camera detected.\" is displayed,test is successful</string>
+    <string name="vice_camera_toast">Vice camera detected</string>
+
+    <!--LED-->
+    <string name="led_test">led test</string>
+
+
+    <string name="test_date">Test time:</string>
+
+    <string name="TP">TP</string>
+    <string name="LCD">LCD</string>
+    <string name="Receiver">Receiver</string>
+
+    <string name="Wlan">WLAN</string>
+    <string name="Gps">GPS</string>
+    <string name="Version">Version</string>
+
+    <string name="Bluetooth">Bluetooth</string>
+    <string name="Brightness">Brightness</string>
+    <string name="Vibrate">Vibrate</string>
+
+    <string name="Headset">Headset</string>
+    <string name="Keyboard">Keyboard</string>
+    <string name="Charge">Charge</string>
+
+    <string name="SDCard">SD</string>
+    <string name="Radio">Radio</string>
+    <string name="Speaker">Speaker</string>
+
+    <string name="Gyroscope">Gyroscope</string>
+    <string name="UIM">UIM</string>
+    <string name="Mike">Microphone</string>
+
+    <string name="FrontFlash">FrontFlash</string>
+    <string name="BackFlash">BackFlash</string>
+    <string name="FingerPrint">FingerPrint</string>
+
+    <string name="BackCamera">BackCamera</string>
+    <string name="FrontCamera">FrontCamera</string>
+    <string name="LightSensor">LightSensor</string>
+
+    <string name="Proximity">Proximity</string>
+    <string name="Accelerometer">Accelerometer</string>
+    <string name="Magnetic">Magnetic</string>
+
+    <string name="OTG">OTG</string>
+    <string name="HDMI">HDMI</string>
+    <string name="Pressure">Pressure</string>
+
+    <string name="ViceCamera">ViceCamera</string>
+    <string name="LED">LED</string>
+    <string name="NFC">NFC</string>
+
+    <string name="Tee">Tee</string>
+    <string name="Keybox">Keybox</string>
+    <!--added by Yar begin-->
+    <string name="Phone">Phone</string>
+    <!--added by Yar end-->
+    <!--BatteryTest-->
+    <string name="prompt">Check the test items you need to test and click the start button below to test\nDo not press the power key in the test</string>
+    <string name="video_speaker">Video and speaker</string>
+    <string name="video_receiver">Video and receiver</string>
+    <string name="vibrator">Vibrator</string>
+    <string name="mike_receiver">Microphone and receiver</string>
+    <string name="front_camera">Front Camera</string>
+    <string name="back_camera">Back Camera</string>
+    <string name="back_light">Flashlight</string>
+    <string name="duration">Duration(h):</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="lave">Lave</string>
+    <string name="battery_test">Battery Test</string>
+    <string name="stop_test">Interrupted test</string>
+    <string name="test_success">Test completion</string>
+    <string name="test_fail">Test failure</string>
+    <string name="minute">minute</string>
+    <string name="hour">hour</string>
+    <string name="battery_test_notice">Please select the test item</string>
+
+</resources>

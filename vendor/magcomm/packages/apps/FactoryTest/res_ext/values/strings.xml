@@ -1,0 +1,16 @@
+<resources>
+    <string name="operate_ok">successful</string>
+    <string name="operate_fail">Please re-operate</string>
+    <string name="motion_operating">Data is being requested</string>
+    <string name="res_calibration">reset?</string>
+    <string name="ok">ok</string>
+    <string name="cancel">cancel</string>
+    <string name="g_sensor">G-Sensor Calibration</string>
+    <string name="calibration_note">Please place the phone horizontally before calibration</string>
+    <string name="calibration">calibration</string>
+    <string name="reset">reset</string>
+    <string name="sensor_summary">Horizontal calibration setting</string>
+	<string name="imei_edit_hint">Enter a 15-digit number</string>
+    <string name="imei_button_submit">Submit</string>
+    <string name="imei_label">IMEI Information</string>
+</resources>

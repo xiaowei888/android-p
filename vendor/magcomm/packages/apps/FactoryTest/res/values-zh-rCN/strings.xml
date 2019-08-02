@@ -1,0 +1,262 @@
+<resources>
+    <string name="app_name">工程模式</string>
+    <string name="test_auto">自动测试</string>
+    <string name="test_manual">单项测试</string>
+    <string name="test_report">测试报告</string>
+    <string name="machinery_version">版本信息</string>
+    <string name="result_success">成功</string>
+    <string name="result_fail">失败</string>
+
+    <!--Version-->
+    <string name="version_model">型号:</string>
+    <string name="software_version">软件版本:</string>
+    <string name="hardware_version">硬件版本:</string>
+    <string name="baseband_version">基带版本:</string>
+    <string name="sn_version">SN号:</string>
+    <string name="sn_error">未能获取SN号</string>
+    <string name="sn_notice">SN长度不匹配,未能获取BT,FT状态</string>
+
+
+    <!--Reset-->
+    <string name="factory_reset">恢复出厂设置</string>
+    <string name="need_reset">请确定是否要恢复出厂设置</string>
+    <string name="reset_cancel">取消</string>
+    <string name="reset_ensure">确定</string>
+
+    <!--WLAN-->
+    <string name="wifi_title">扫描到的WiFi网络</string>
+    <string name="wifi_first_five">(前五个)</string>
+    <string name="wifi_signal_intensity">信号强度</string>
+    <string name="wifi_is_opening">正在打开WiFi</string>
+    <string name="wifi_is_closed">WiFi不可用</string>
+    <string name="wifi_is_scanning">正在扫描WiFi</string>
+
+
+    <!--GPS-->
+    <string name="gps_data">GPS数据</string>
+    <string name="gps_snr">信噪比:</string>
+    <string name="gps_prn">PRN:</string>
+    <string name="gps_azimuth">方位角:</string>
+    <string name="gps_ave_signal_intensity">平均信号强度：</string>
+    <string name="locate_fail">无法获取地理信息</string>
+    <string name="gps_longitude">经度:</string>
+    <string name="gps_latitude">纬度:</string>
+    <string name="gps_time">GPS时间:</string>
+    <string name="being_positioned">正在定位...</string>
+    <string name="gps_item_id">ID:</string>
+
+    <!--Bluetooth-->
+    <string name="open_bt">正在打开蓝牙...</string>
+    <string name="scan_bt_device">正在扫描设备...</string>
+    <string name="used_bt_device">可用设备:</string>
+    <string name="unknow_device">未知设备</string>
+    <string name="bt_refresh">刷新</string>
+
+    <!--Brightness-->
+    <string name="current_brightness">当前屏幕亮度:</string>
+
+    <!--Keyboard-->
+    <string name="keyboard_test_title">请按下列表中的按键,以测试按键</string>
+
+    <!--Headset-->
+    <string name="headset_is_unavailable">未检测到耳机设备</string>
+
+    <!--Charge-->
+    <string name="battery_state">充电状态:</string>
+    <string name="battery_voltage">电池电压:</string>
+    <string name="current_temperature">当前手机温度:</string>
+    <string name="charge_current">充电电流:</string>
+    <string name="charge_voltage">充电电压:</string>
+    <string name="charge_notice">请连接充电线！！</string>
+    <string name="battery_charge_state_ac">正在充电(AC)</string>
+    <string name="battery_charge_state_usb">正在充电(USB)</string>
+    <string name="battery_charge_state_discharging">断开连接</string>
+    <string name="battery_charge_state_notcharging">没有充电</string>
+    <string name="battery_charge_state_full">已充满</string>
+    <string name="battery_charge_state_unknow">未知</string>
+
+    <!--SD-->
+    <string name="no_sd">请插入储存卡</string>
+    <string name="sdcard_test_success">存储卡测试成功</string>
+
+
+    <!--Radio-->
+    <string name="radio_hint">请稍等,正在打开FM</string>
+    <string name="radio_test_finish">测试结束</string>
+
+    <!--Gyroscope-->
+    <string name="gyroscope_data">陀螺仪数据:</string>
+    <string name="gyroscope_notice">未检测到陀螺仪</string>
+
+    <!--SIM || UIM-->
+    <string name="test_sim_status_0">状态: 未知</string>
+    <string name="test_sim_status_1">状态: 无SIM卡</string>
+    <string name="test_sim_status_2">状态: 已锁: 需要用户输入PIN码解锁</string>
+    <string name="test_sim_status_3">状态: 已锁: 需要用户输入PUN码解锁</string>
+    <string name="test_sim_status_4">状态: 已锁: 需要一个网络的PIN码去解锁</string>
+    <string name="test_sim_status_5">状态: 测试良好</string>
+    <string name="test_sim_network">网络:</string>
+
+    <!--FingerPrint-->
+    <string name="fingerprint_hint">请稍等,正在打开指纹测试</string>
+    <string name="fingerprint_test_finish">测试结束</string>
+
+    <!--Camera-->
+    <string name="take_picture">拍照</string>
+
+    <!--LightSensor-->
+    <string name="light_intensity_value">光线强度值:</string>
+    <string name="light_sensor_notice">未检测到光感传感器</string>
+
+    <!--Proximity-->
+    <string name="proximitysenor_info">距离传感器数据：</string>
+    <string name="proximity_sensor_notice">未检测到距离传感器</string>
+
+    <!--Accelerometer-->
+    <string name="accelerometer_data">加速度传感器数据:</string>
+    <string name="accelerometer_notice">未检测到加速度传感器</string>
+
+    <!--Magnetic-->
+    <string name="magnetic_data">磁场传感器数据:</string>
+    <string name="magnetic_notice">没有带磁性的物体靠近时,如果X,Y,Z的数值在±400以内,则成功，否则为失败</string>
+    <string name="magnetic_error">未检测到磁场传感器</string>
+
+    <!--OTG-->
+    <string name="no_otg">未检测到OTG</string>
+    <string name="vendor_id">厂家标识ID:</string>
+    <string name="product_id">产品标识ID:</string>
+    <string name="manufacturer_name">制造商:</string>
+    <string name="serial_number">序号:</string>
+    <string name="usb_version">USB:</string>
+
+    <!--HDMI-->
+    <string name="no_hdmi">未检测到HDMI</string>
+    <string name="detect_hdmi">检测到HDMI</string>
+
+    <!--Pressure-->
+    <string name="no_pressure">未检测到气压传感器</string>
+
+    <!--ViceCamera-->
+    <string name="vice_camera_notice">请用手或者其他物体遮挡副摄像头,或把手机放置在光线较弱的地方.当提示“检测到副摄像头”时,则表示测试成功</string>
+    <string name="vice_camera_toast">检测到副摄像头</string>
+
+    <!--LED-->
+    <string name="led_test">LED 测试</string>
+
+    <string name="test_date">测试时间:</string>
+
+    <!--TP-->
+    <!--LCD-->
+    <!--REC-->
+
+    <!--WLAN-->
+    <!--GPS-->
+    <!--版本 Version TODO-->
+
+    <!--蓝牙 Bluttooth-->
+    <!--背光 Brightness-->
+    <!--振动 Vibrate-->
+
+    <!--耳机-->
+    <!--键盘-->
+    <!--充电-->
+
+    <!--T卡 -->
+    <!--收音机-->
+    <!--扬声器-->
+
+
+    <!--陀螺仪-->
+    <!--检测UIM TODO-->
+    <!--话筒回路-->
+
+    <!--前闪光灯-->
+    <!--后闪光灯-->
+    <!--指纹识别-->
+
+    <string name="TP">触摸屏</string>
+    <string name="LCD">屏幕坏点检测</string>
+    <string name="Receiver">听筒</string>
+
+    <string name="Wlan">无线网络</string>
+    <string name="Gps">定位</string>
+    <string name="Version">版本</string>
+
+    <string name="Bluetooth">蓝牙</string>
+    <string name="Brightness">背光</string>
+    <string name="Vibrate">振动</string>
+
+    <string name="Headset">耳机</string>
+    <string name="Keyboard">键盘</string>
+    <string name="Charge">充电</string>
+
+
+    <string name="SDCard">SD卡</string>
+    <string name="Radio">收音机</string>
+    <string name="Speaker">扬声器</string>
+
+    <string name="Gyroscope">陀螺仪</string>
+    <string name="UIM">电话卡</string>
+    <string name="Mike">话筒回路</string>
+
+
+    <string name="FrontFlash">前闪光灯</string>
+    <string name="BackFlash">后闪光灯</string>
+    <string name="FingerPrint">指纹测试</string>
+
+
+    <!--后置摄像头 -->
+    <!--前置摄像头 -->
+    <!--光传感器 TODO-->
+    <string name="BackCamera">后摄像头</string>
+    <string name="FrontCamera">前摄像头</string>
+    <string name="LightSensor">光传感器</string>
+
+
+    <!--距离传感器 TODO-->
+    <!--加速度传感器-->
+    <!--磁场感应器-->
+    <string name="Proximity">距离传感器</string>
+    <string name="Accelerometer">加速传感器</string>
+    <string name="Magnetic">磁场传感器</string>
+
+
+    <!--OTG-->
+    <!--HDMI-->
+    <!--气压计-->
+    <string name="OTG">外接存储</string>
+    <string name="HDMI">外接显示</string>
+    <string name="Pressure">气压计</string>
+
+    <!--ViceCamera-->
+    <string name="ViceCamera">后辅摄像头</string>
+    <string name="LED">LED灯</string>
+    <string name="NFC">NFC测试</string>
+
+
+
+    <!--双MIC-->
+
+    <!--BatteryTest-->
+    <string name="prompt">勾选需要进行的测试项后点击下面的开始按钮进行测试\n测试中请勿按击电源键</string>
+    <string name="video_speaker">视频和扬声器</string>
+    <string name="video_receiver">视频和听筒</string>
+    <string name="vibrator">振动器</string>
+    <string name="mike_receiver">麦克风和听筒</string>
+    <string name="front_camera">前摄像头</string>
+    <string name="back_camera">后摄像头</string>
+    <string name="back_light">后闪光灯</string>
+    <string name="duration">持续时间(h):</string>
+    <string name="start">开始</string>
+    <string name="stop">停止</string>
+    <string name="lave">剩余</string>
+    <string name="battery_test">老化测试</string>
+    <string name="stop_test">已中断测试</string>
+    <string name="test_success">测试完成</string>
+    <string name="test_fail">测试失败</string>
+    <string name="minute">分钟</string>
+    <string name="hour">小时</string>
+    <string name="battery_test_notice">请选择测试项</string>
+
+
+</resources>

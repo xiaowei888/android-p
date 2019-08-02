@@ -1,0 +1,187 @@
+#!/bin/bash
+###########################################################################
+# Copyright Statement:
+# --------------------
+# This software is protected by Copyright and the information contained
+# herein is confidential. The software may not be copied and the information
+# contained herein may not be used or disclosed except with the written
+# permission of Magcomm Inc. (C) 2015
+# -----------------
+# Author : y.haiyang
+# Version: V1.0
+# Update : 2014-06-02
+############################################################################
+readonly BASE_PATH=$(dirname $(pwd))
+readonly CURRENT_PATH=$(pwd)
+
+PROJECT_NAME=$1
+
+function get_custom_path(){
+ local flag="cxprojects"
+
+ for file in `ls $1`
+    do
+        local last=${file:((${#file} - 10))}
+        if [[ $last  = $flag  ]] ; then
+            echo $1"/"$file
+        fi
+    done
+
+}
+
+function print_build_custom (){
+    echo -e "\e[01;32m*************************************************\e[0m"
+    let i=1
+    echo -e "\e[01;32m*\e[0m \e[01;34mMG Projects : \e[0m"
+        for file in `ls $1`
+        do
+            num=`expr $i % 5`
+            if [ $num -eq 1 ] ; then
+                echo -e "\e[01;32m*\e[0m\c"
+            fi
+
+            if [ $num -eq 0 ] ; then
+                echo -e "\t$file "
+            else
+                echo -e "\t $file \c"
+            fi
+
+            let i++
+        done
+    if [ $num -eq 0 ] ; then
+        echo -e "\e[01;32m*************************************************\e[0m"
+    else
+        echo -e "\n\e[01;32m*************************************************\e[0m"
+    fi
+}
+
+function copy_files()
+{
+    local name=$1
+    local path=$2
+
+    local target=$TARGET_PATH
+
+
+    last_str=${path:((${#path} - 1))}
+    if [ $last_str = "/" ] ; then
+        path=${path%?}
+    fi
+
+    local from=$path
+
+    echo -e "WARNING: Start configuring \e[01;31m $name \e[0m"
+
+    if [ ! -d $from ]; then
+        echo
+        echo -e "\e[01;31m 路径不存在忽略, $from \e[0m"
+        echo
+        exit
+    fi
+
+    files=`ls $from`
+
+    for file in $files
+    do
+        from=$path/$file
+        to=$CURRENT_PATH/$file
+        echo "copy : $from"
+        echo " to  : $to"
+        #使用原生的拨号和通话界面
+        if [ -d $from ]; then
+            mkdir -p $to
+	    if [ "$USE_ORIGINAL_DIALER" = "yes" ];then
+   	        strA="Cnext_OS_*"
+	        if [[ $from =~ $strA ]];then
+		    rsync -ar --exclude Dialer --exclude PhoneCommon $from/* $to
+	        else
+		    rsync -ar $from/* $to
+	        fi 
+	    else
+	        rsync -ar $from/* $to
+	    fi       
+        else
+	    if [ "$USE_ORIGINAL_DIALER" = "yes" ];then
+   	        strA="Cnext_OS_*"
+	        if [[ $from =~ $strA ]];then
+		    rsync -ar --exclude Dialer --exclude PhoneCommon $from/* $to
+	        else
+		    rsync -ar $from/* $to
+	        fi 
+	    else
+	        rsync -ar $from/* $to
+	    fi       
+        fi
+        #使用原生的拨号和通话界面
+    done
+    echo
+    echo "copying $name finished!"
+    echo
+}
+
+
+#判断最后一个字符是否是 / 如果是 删除
+last_str=${PROJECT_NAME:((${#PROJECT_NAME} - 1))}
+if [ "$last_str" = "/" ] ; then
+    PROJECT_NAME=${PROJECT_NAME%?}
+fi
+
+CUSTOM_PATH=$(get_custom_path $BASE_PATH )
+PROJECT_PATH=$CUSTOM_PATH/$PROJECT_NAME
+
+if [ $# -lt 1 ]; then
+    echo -e "\e[01;32m*************************************************\e[0m"
+    echo -e "\e[01;32m*\e[0m Usage: mag <project>"
+    print_build_custom $CUSTOM_PATH
+    exit
+fi
+
+echo "PROJECT_PATH = $PROJECT_PATH"
+
+CONFIG_FILE=$(find $PROJECT_PATH -name "ProjectConfig.mk")
+if [ -n "$CONFIG_FILE" ] ; then
+    MAGCOMM_UI=$(cat $CONFIG_FILE | grep "^\s*MAGCOMM_UI" | sed 's/.*\s*=\s*//g')
+#added by wxc for extra
+    MAGCOMM_EX=$(cat $CONFIG_FILE | grep "^\s*MAGCOMM_EX" | sed 's/.*\s*=\s*//g')
+else
+    echo "CONFIG_FILE is empty"
+fi
+echo CONFIG_FILE=$CONFIG_FILE
+echo "magcommUI = $MAGCOMM_UI"
+PROJECT_MAGCOMM_UI_PATH=$CUSTOM_PATH/$MAGCOMM_UI
+
+#使用原生的拨号和通话界面
+if [ -n "$CONFIG_FILE" ] ; then
+     USE_ORIGINAL_DIALER=$(cat $CONFIG_FILE | grep "^\s*USE_ORIGINAL_DIALER" | sed 's/.*\s*=\s*//g')
+else	
+     USE_ORIGINAL_DIALER=no
+fi
+#使用原生的拨号和通话界面
+
+if [ ! -d $PROJECT_PATH ]; then
+   echo "$PROJECT_PATH folder is missing."
+   exit
+fi
+
+if [ -n "$MAGCOMM_UI"  -a  "$MAGCOMM_UI" != "NONE" ]; then
+    echo  "WARNING: Configure $MAGCOMM_UI ..."
+    copy_files $MAGCOMM_UI $PROJECT_MAGCOMM_UI_PATH
+else
+    echo  -e "\e[01;34mWARNING: No other UI configuration \e[0m"
+    echo
+fi
+
+#added by wxc for extra start
+echo "magcommEX = $MAGCOMM_EX"
+PROJECT_MAGCOMM_EX_PATH=$CUSTOM_PATH/$MAGCOMM_EX
+if [ -n "$MAGCOMM_EX"  -a  "$MAGCOMM_EX" != "NONE" ]; then
+    echo  "WARNING: Configure $MAGCOMM_EX ..."
+    copy_files $MAGCOMM_EX $PROJECT_MAGCOMM_EX_PATH
+else
+    echo  -e "\e[01;34mWARNING: No other UI configuration \e[0m"
+    echo
+fi
+#added by wxc for extra end
+
+copy_files $PROJECT_NAME $PROJECT_PATH
+

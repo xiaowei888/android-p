@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#222"
+    android:orientation="horizontal">
+
+    <com.magcomm.factorytest.view.VerticalSeekBar
+        android:id="@+id/vs_left_headset"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1" />
+
+    <com.magcomm.factorytest.view.MikeView
+        android:id="@+id/mv_headset"
+        android:layout_width="@dimen/headset_mike_width"
+        android:layout_height="@dimen/headset_mike_height"
+        android:layout_gravity="center_vertical" />
+
+    <com.magcomm.factorytest.view.VerticalSeekBar
+        android:id="@+id/vs_right_headset"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tv_headset_error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_24"
+        android:visibility="gone" />
+
+</LinearLayout>

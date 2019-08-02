@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:paddingTop="@dimen/px_100"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/dp_3">
+
+        <TextView
+            style="@style/charge_item"
+            android:gravity="center_vertical"
+            android:text="@string/battery_state" />
+
+        <TextView
+            android:id="@+id/tv_battery_state"
+            style="@style/charge_item"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/dp_3">
+
+        <TextView
+            style="@style/charge_item"
+            android:gravity="center_vertical"
+            android:text="@string/battery_voltage" />
+
+        <TextView
+            android:id="@+id/tv_battery_voltage"
+            style="@style/charge_item"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/dp_3">
+
+        <TextView
+            style="@style/charge_item"
+            android:layout_weight="3"
+            android:gravity="center_vertical"
+            android:text="@string/current_temperature" />
+
+        <TextView
+            android:id="@+id/tv_current_temperature"
+            style="@style/charge_item"
+            android:layout_weight="2"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_charge_current"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/dp_3">
+
+        <TextView
+            style="@style/charge_item"
+            android:gravity="center_vertical"
+            android:text="@string/charge_current" />
+
+        <TextView
+            android:id="@+id/tv_charge_current"
+            style="@style/charge_item"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_charge_voltage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/dp_3">
+
+        <TextView
+            style="@style/charge_item"
+            android:gravity="center_vertical"
+            android:text="@string/charge_voltage" />
+
+        <TextView
+            android:id="@+id/tv_charge_voltage"
+            style="@style/charge_item"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_charge_notice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:gravity="center"
+        android:textSize="@dimen/sp_24" />
+</LinearLayout>

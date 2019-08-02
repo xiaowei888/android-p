@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#99aaaaaa"
+    android:orientation="horizontal">
+
+    <TextView
+        style="@style/popup_window"
+        android:text="@string/X" />
+
+    <TextView
+        android:id="@+id/popup_x"
+        style="@style/popup_window" />
+
+    <TextView
+        style="@style/popup_window"
+        android:text="@string/Y" />
+
+    <TextView
+        android:id="@+id/popup_y"
+        style="@style/popup_window" />
+
+    <TextView
+        style="@style/popup_window"
+        android:text="@string/dx" />
+
+    <TextView
+        android:id="@+id/popup_dx"
+        style="@style/popup_window" />
+
+    <TextView
+        style="@style/popup_window"
+        android:text="@string/dy" />
+
+    <TextView
+        android:id="@+id/popup_dy"
+        style="@style/popup_window" />
+</LinearLayout>

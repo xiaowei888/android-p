@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#222">
+
+    <FrameLayout
+        android:id="@+id/fragment_contain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ll_result"
+        android:layout_marginBottom="@dimen/dp_3"></FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_success"
+            style="@style/result_button"
+            android:text="@string/result_success" />
+
+        <Button
+            android:id="@+id/btn_fail"
+            style="@style/result_button"
+            android:text="@string/result_fail" />
+    </LinearLayout>
+</RelativeLayout>

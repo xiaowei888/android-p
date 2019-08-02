@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#222">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ll"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:clickable="false"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_auto_test"
+            style="@style/main_button_style"
+            android:text="@string/test_auto" />
+
+        <Button
+            android:id="@+id/btn_test_report"
+            style="@style/main_button_style"
+            android:text="@string/test_report" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ll_point"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:clickable="false"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_manual_test"
+            style="@style/main_button_style"
+            android:text="@string/test_manual" />
+
+        <Button
+            android:id="@+id/btn_version"
+            style="@style/main_button_style"
+            android:text="@string/machinery_version" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_point"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_centerInParent="true"></LinearLayout>
+
+    <Button
+        android:id="@+id/btn_batterytest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_point"
+        android:layout_margin="20dp"
+        android:background="@drawable/btn_normal_bg"
+        android:clickable="true"
+        android:text="@string/battery_test"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_reset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_batterytest"
+        android:layout_margin="20dp"
+        android:background="@drawable/btn_normal_bg"
+        android:clickable="true"
+        android:text="@string/factory_reset"
+        android:textAllCaps="false" />
+
+</RelativeLayout>

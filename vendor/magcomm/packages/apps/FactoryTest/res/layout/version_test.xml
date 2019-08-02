@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:paddingTop="@dimen/px_100"
+    android:orientation="vertical">
+
+	<LinearLayout 
+        android:layout_width="fill_parent" 
+        android:layout_height="fill_parent" 
+        android:orientation="vertical" >  
+	    <TextView
+	        android:id="@+id/tv_model"
+	        style="@style/version_item" />
+
+	    <TextView
+	        android:id="@+id/tv_software_version"
+	        style="@style/version_item" />
+
+	    <TextView
+	        android:id="@+id/tv_hardware_version"
+	        style="@style/version_item" />
+
+	    <TextView
+	        android:id="@+id/tv_baseband_version"
+	        style="@style/version_item" />
+
+	    <TextView
+	        android:id="@+id/tv_sn_version"
+	        style="@style/version_item" />
+
+	    <TextView
+	        android:id="@+id/tv_wcdma_bt"
+	        style="@style/version_item" />
+
+	    <TextView
+	        android:id="@+id/tv_wcdma_ft"
+	        style="@style/version_item" />
+
+	    <TextView
+	        android:id="@+id/tv_gsm_bt"
+	        style="@style/version_item" />
+
+	    <TextView
+	        android:id="@+id/tv_gsm_ft"
+	        style="@style/version_item" />
+
+	    <TextView
+	        android:id="@+id/tv_imei1"
+	        style="@style/version_item" />
+
+	    <TextView
+	        android:id="@+id/tv_imei2"
+	        style="@style/version_item" />
+
+	    <TextView
+	        android:id="@+id/tv_meid"
+	        style="@style/version_item" />
+
+	    <TextView
+	        android:id="@+id/tv_device_info"
+	        style="@style/version_item" />
+	</LinearLayout>  
+</ScrollView>

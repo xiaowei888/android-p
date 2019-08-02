@@ -1,0 +1,124 @@
+#!/bin/bash
+# Copyright Statement:
+# --------------------
+# This software is protected by Copyright and the information contained
+# herein is confidential. The software may not be copied and the information
+# contained herein may not be used or disclosed except with the written
+# permission of Magcomm Inc. (C) 2014
+# -----------------
+# Author : y.haiyang
+# Version: V1.0
+# Update : 2014-06-19
+############################################################################
+readonly MAIN_MK_HEADER="full_" 
+PROJECT=$1
+BUILD_APP=$2
+IS_MAG=$3
+
+function get_custom_path(){                                                                                                     
+ local flag="projects"
+
+ for file in `ls $1`
+    do
+        local last=${file:((${#file} - 8))}
+        if [[ $last  = $flag  ]] ; then
+            echo $1"/"$file
+        fi
+    done
+
+}
+#如果没有参数，那么就列举可编译版本
+if [ -z "$PROJECT" ] ; then
+	./mag
+	exit 0
+fi
+
+if [ "$IS_MAG" == "mag" ] ; then
+	./mag $PROJECT
+fi
+
+
+BASE_PATH=$(dirname $(pwd))
+CUSTOM_PATH=$(get_custom_path $BASE_PATH )
+
+configure_path=$CUSTOM_PATH/$PROJECT/device/magcomm
+CONFIGURE_FILE_PATH=$(find $configure_path -name "full_*.mk")
+
+CONFIGURE_FILE_BASE_PATH=$(dirname $CONFIGURE_FILE_PATH)"/"
+CONFIGURE_FILE=${CONFIGURE_FILE_PATH:${#CONFIGURE_FILE_BASE_PATH}}
+DEVICE=$(echo $CONFIGURE_FILE | awk -F '.' '{print $1}')
+DEVICE=${DEVICE:${#MAIN_MK_HEADER}}
+echo DEVIC==$DEVICE
+echo CONFIGURE_FILE=$CONFIGURE_FILE
+
+APP_NAME=$(cat $BUILD_APP/Android.mk | grep "^\s*LOCAL_PACKAGE_NAME" | sed 's/.*\s*:=\s*//g' )
+OUT_TAG1=$(cat $BUILD_APP/Android.mk | grep "^\s*LOCAL_MODULE_PATH" | sed 's/.*\s*:=\s*//g' )
+OUT_TAG2=$(cat $BUILD_APP/Android.mk | grep "^\s*LOCAL_MODULE_CLASS" | sed 's/.*\s*:=\s*//g' )
+OUT_TAG3=$(cat $BUILD_APP/Android.mk | grep "^\s*LOCAL_PRIVILEGED_MODULE" | sed 's/.*\s*:=\s*//g' )
+echo "OUT_TAG1 == $OUT_TAG1"
+echo "OUT_TAG2 == $OUT_TAG2"
+echo "OUT_TAG3 == $OUT_TAG3"
+echo "APP_NAME == $APP_NAME"
+
+REMOVE_FILES=$APP_NAME"_*"
+
+echo "Removing $APP_NAME Cache...."
+
+find ./out -name $REMOVE_FILES | xargs rm -rf
+
+source  build/envsetup.sh 
+
+if [ "$APP_NAME" == "Launcher3" ] ; then
+	mmma $BUILD_APP
+else
+	mmm $BUILD_APP
+fi
+
+result=$?
+if [ $result -ne 0 ] 
+then
+echo -e "\e[01;31m****************************************\e[0m"
+echo -e "\e[01;31m*\e[0m"
+echo -e "\e[01;31m* There compile error , exit !\e[0m"
+echo -e "\e[01;31m*\e[0m"
+echo -e "\e[01;31m****************************************\e[0m"
+exit 0  
+fi
+
+adb remount
+
+APK_FILE=$APP_NAME".apk"
+echo "Install APP : $APK_FILE"
+INSTALLED_PATH="out/target/product/$DEVICE/system"
+
+if [ "$OUT_TAG3" == "true" ] ; then 
+	INSTALLED_PATH="$INSTALLED_PATH/priv-app/$APP_NAME/$APK_FILE"
+	echo -e "Running \e[01;32m adb push $INSTALLED_PATH  system/priv-app/$APP_NAME/ \e[0m"
+	adb push $INSTALLED_PATH  system/priv-app/$APP_NAME/
+    adb install -r $INSTALLED_PATH
+	exit 0
+elif [ -z "$OUT_TAG1" -a -z "$OUT_TAG2" ] ; then 
+	INSTALLED_PATH="$INSTALLED_PATH/app/$APP_NAME"
+	echo -e "Running \e[01;32m adb push $INSTALLED_PATH  system/app/$APP_NAME/ \e[0m"
+	adb push $INSTALLED_PATH  /system/app/$APP_NAME/
+    adb install -r $INSTALLED_PATH
+	exit 0
+elif [ "$OUT_TAG2" == "JAVA_LIBRARIES" ] ; then
+	INSTALLED_PATH="$INSTALLED_PATH/framework/$APP_NAME"
+	echo -e "Running \e[01;32m adb push $INSTALLED_PATH  /system/framework \e[0m"
+    adb push $INSTALLED_PATH  /system/framework
+    exit 0
+fi
+
+echo $OUT_TAG1 | grep -q "JAVA_LIBRARIES"
+
+if [ $? -eq 0 ] ; then
+	INSTALLED_PATH="$INSTALLED_PATH/framework/$APP_NAME"
+	echo -e "Running \e[01;32m adb push $INSTALLED_PATH  /system/framework \e[0m"
+    adb push $INSTALLED_PATH  /system/framework
+    exit 0
+else
+	echo -e "\e[01;31m has error and  no push \e[0m"
+fi
+
+

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<result>
+<!--SERVER_PATH="git clone liubo@192.168.0.133:/home/liubo/git/"-->
+    <platform name="MT6572平台" host="192.168.0.133" >
+        <content key="MT6572_MAG" address="mtk_72_magcomm"/>
+    </platform>
+
+    <platform name="MT6589平台" host="192.168.0.133" >
+        <content key="MT6589" address="mtk89_wet_jb2_v16" />
+    </platform>
+
+    <platform name="MT6582平台" host="192.168.0.133" >
+        <content key="MT6582" address="Magcomm_MTK_server/Magcomm_82_wet_jb5_V1.27" />
+    </platform>
+
+    <platform name="MT6592平台" host="192.168.0.133" >
+        <content key="MT6582_MT6592_KK" address="Magcomm_MTK_server/magcomm_82_92_kk" />
+    </platform>
+
+    <platform name="LTE平台" host="192.168.0.6" >
+        <content key="MT6582_LTE_CSFB" address="magcomm_82_lte_MP3_V3.35" />
+    </platform>
+
+    <platform name="MTK_64位" host="192.168.0.6" >
+        <content key="MT3252" address="32_52_MP_5M_ALPS.KK2.MP13.V1.30" />
+        <content key="MT6735" address="35_65C_L_ALPS.L0.MP8.V2.1" />
+        <content key="MT6753" address="magcomm_53_ALPS.L1.MP3.V2_MAGC6753_65C_L" />
+        <content key="MT6753_6M" address="magcomm_53_6M_ALPS.L1.MP3.V2.3_MAGC6753_65C_L1" />
+    </platform>
+
+</result>

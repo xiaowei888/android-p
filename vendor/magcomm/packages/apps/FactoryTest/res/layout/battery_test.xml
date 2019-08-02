@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#aaa"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:title="@string/battery_test"
+        app:titleTextColor="#fff"></android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/prompt"
+        android:textColor="#f00"
+        android:textSize="24dp" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:columnCount="3">
+
+        <CheckBox
+            android:id="@+id/video_speaker"
+            style="@style/radio_button"
+            android:text="@string/video_speaker" />
+
+        <CheckBox
+            android:id="@+id/video_receiver"
+            style="@style/radio_button"
+            android:text="@string/video_receiver" />
+
+        <CheckBox
+            android:id="@+id/vibrator"
+            style="@style/radio_button"
+            android:text="@string/vibrator" />
+
+        <CheckBox
+            android:id="@+id/mike_receiver"
+            style="@style/radio_button"
+            android:text="@string/mike_receiver" />
+
+        <CheckBox
+            android:id="@+id/front_creame"
+            style="@style/radio_button"
+            android:text="@string/front_camera" />
+
+        <CheckBox
+            android:id="@+id/back_camera"
+            style="@style/radio_button"
+            android:text="@string/back_camera" />
+
+        <CheckBox
+            android:id="@+id/back_light"
+            style="@style/radio_button"
+            android:text="@string/back_light" />
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/duration"
+            android:textSize="16dp" />
+
+        <Spinner
+            android:id="@+id/time_spinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="2"
+            android:entries="@array/spinner"></Spinner>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20px"
+        android:background="@drawable/stop_bg"
+        android:text="@string/start"
+        android:textSize="@dimen/button_text" />
+
+    <TextView
+        android:id="@+id/test_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="#000"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+</LinearLayout>

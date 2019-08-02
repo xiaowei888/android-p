@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/dp_20"
+    android:paddingTop="@dimen/px_100"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_gyroscope_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_24" />
+
+    <TextView
+        android:id="@+id/tv_gyroscope_datax"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_8"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_24" />
+
+    <TextView
+        android:id="@+id/tv_gyroscope_datay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_8"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_24" />
+
+    <TextView
+        android:id="@+id/tv_gyroscope_dataz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_8"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_24" />
+
+    <TextView
+        android:id="@+id/tv_gyroscope_notice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_8"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_24" />
+
+</LinearLayout>

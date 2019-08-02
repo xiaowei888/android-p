@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/fragment_nfc_contain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ll_nfc_result"
+        android:layout_marginBottom="@dimen/dp_3">
+
+        <TextView
+            android:id="@+id/card_account_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="#000"
+            android:textSize="20dp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_nfc_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_nfc_success"
+            style="@style/result_button"
+            android:text="@string/result_success" />
+
+        <Button
+            android:id="@+id/btn_nfc_fail"
+            style="@style/result_button"
+            android:text="@string/result_fail" />
+    </LinearLayout>
+
+</RelativeLayout>

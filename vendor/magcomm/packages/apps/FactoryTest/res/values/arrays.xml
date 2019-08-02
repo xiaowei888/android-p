@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="items">
+        <item>TP</item>
+        <item>LCD</item>
+        <item>Receiver</item>
+        <item>Wlan</item>
+        <item>Gps</item>
+        <item>Version</item>
+        <item>Bluetooth</item>
+        <item>Brightness</item>
+        <item>Vibrate</item>
+        <item>Headset</item>
+        <item>Keyboard</item>
+        <item>Charge</item>
+        <item>SDCard</item>
+        <item>Radio</item>
+        <item>Speaker</item>
+        <item>Gyroscope</item>
+        <item>UIM</item>
+        <item>Mike</item>
+        <item>FrontFlash</item>
+        <item>BackFlash</item>
+        <item>FingerPrint</item>
+        <item>BackCamera</item>
+        <item>FrontCamera</item>
+        <item>LightSensor</item>
+        <item>Proximity</item>
+        <item>Accelerometer</item>
+        <item>Magnetic</item>
+        <item>OTG</item>
+        <item>HDMI</item>
+        <item>Pressure</item>
+        <item>ViceCamera</item>
+        <item>LED</item>
+        <item>NFC</item>
+        <item>Tee</item>
+        <item>Keybox</item>
+        <!--added by Yar begin-->
+        <item>Phone</item>
+        <!--added by Yar end-->
+    </array>
+    <array name="keyboard_item">
+        <item>Volume up</item>
+        <item>Volume down</item>
+        <item>Home</item>
+        <item>Menu</item>
+        <item>Back</item>
+    </array>
+    <array name="spinner">
+        <item>1h</item>
+        <item>2h</item>
+        <item>3h</item>
+        <item>4h</item>
+        <item>8h</item>
+        <item>12h</item>
+        <item>16h</item>
+        <item>24h</item>
+        <item>48h</item>
+        <item>72h</item>
+    </array>
+</resources>

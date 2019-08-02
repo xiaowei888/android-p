@@ -1,0 +1,5 @@
+<resources>
+    <string-array name="sensor_list">
+        <item>@string/g_sensor</item>
+    </string-array>
+</resources>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.magcomm.factorytest"
+    android:sharedUserId="android.uid.system">
+
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- NetWork -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- GPS -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- Bluetooth -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <!-- Camera -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature android:name="android.hardware.camera.flash" />
+    <!--NFC-->
+    <uses-permission android:name="android.permission.NFC" />
+    <!--added by Yar for Call-->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="true" />
+
+    <uses-permission android:name="com.magcomm.factoryprovider.permission" />
+
+    <permission
+        android:name="com.magcomm.factoryprovider.permission"
+        android:label="provider permission"
+        android:protectionLevel="normal" />
+
+    <!-- android:roundIcon="@mipmap/ic_launcher_round" -->
+    <application
+        android:name=".FactoryTestApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.MainActivity"
+            android:resizeableActivity="false"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.BaseActivity"
+            android:resizeableActivity="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseActivityTheme" />
+        <activity
+            android:name=".activity.ItemTestActivity"
+            android:resizeableActivity="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseActivityTheme" />
+        <activity
+            android:name=".item.NFCActivity"
+            android:launchMode="singleTop"
+            android:resizeableActivity="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseActivityTheme">
+        </activity>
+
+        <provider
+            android:name=".database.FactoryProvider"
+            android:authorities="com.magcomm.factorytest.provider"
+            android:permission="com.magcomm.factoryprovider.permission" />
+
+        <activity
+            android:name=".activity.TestResultActivity"
+            android:resizeableActivity="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseActivityTheme"></activity>
+
+        <receiver android:name=".FactoryBroadcastReceiver">
+
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data
+                    android:host="8080"
+                    android:scheme="android_secret_code" />
+		<data
+                    android:host="66"
+                    android:scheme="android_secret_code" />
+		<data
+                    android:host="06"
+                    android:scheme="android_secret_code" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".batterytest.activity.BatteryTestActivity"
+            android:resizeableActivity="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseActivityTheme"></activity>
+        <activity
+            android:name=".batterytest.activity.BatteryBaseActivity"
+            android:resizeableActivity="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/BaseActivityTheme"></activity>
+	<activity
+            android:name="com.magcomm.settingtools.imeidata.ImeiDataActivity"
+            android:label="@string/imei_label"
+            android:process="com.android.phone"
+            android:configChanges="orientation|keyboardHidden|screenSize" > 
+        </activity>
+	<activity android:name="com.magcomm.settingtools.sensorsettings.GravityActivity"
+		android:label="@string/g_sensor"
+        	android:icon="@drawable/g_sensor_icon"
+		android:configChanges="screenSize|keyboardHidden|orientation|screenLayout" android:screenOrientation="portrait">
+            <!--intent-filter>
+            <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+            	android:name="com.android.settings.category"
+            	android:value="com.android.settings.category.device" />
+		<meta-data
+                android:name="com.android.settings.title"
+                android:resource="@string/g_sensor" />
+            <meta-data
+                android:name="com.android.settings.icon"
+                android:resource="@drawable/g_sensor_icon" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/sensor_summary" /-->
+        </activity>
+    </application>
+
+</manifest>

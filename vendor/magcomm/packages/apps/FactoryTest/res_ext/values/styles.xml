@@ -1,0 +1,6 @@
+<resources>
+    <style name="ButtonTheme" parent="android:Theme.Material.Light">
+        <item name="android:colorButtonNormal">#e5f8df</item>
+        <item name="android:colorControlHighlight">#2d7f35</item>
+    </style>
+</resources>
